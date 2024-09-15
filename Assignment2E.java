@@ -1,41 +1,56 @@
-Import java.io.*;
-Public class command line calculator {
-Public static void main (string [] args){
-If((args.length!=3){
-System.out.println("command line argument");
-Return;
-}
-String operation=args[0];
-Double num1=
-Double.parseDouble(args[1]);
-double num 2=
-Double.parseDouble(args[2]);
-Double result=0;
-Switch(operation){
-Case"1":
-Result=num1+num2;
-System.out.println("addition result:"+result);
-break;a
-Case"2":
-result=num1-num2;
-System.out.println("subtraction result:"+result);
-Break;
-Case "3":
-result=num1*num2;
-System.out.println("multiplication result:"+result);
-Break;
-Case"4":
-if(num 2==0){
-    system.out.println("Error: division by zero is not allowed");
-}
-else{
-    result=num1/num2;
-    system.out.println("division result:"+result);
+import java.util.Scanner;
+public class Calculator
+{
+public static void main(String[] args) {
+     Scanner scanner = new Scanner(System.in);
+int choice;
+do 
+{
+System.out.println("Simple Calculator");
+System.out.println("1. Addition");
+System.out.println("2. Subtraction");
+System.out.println("3. Multiplication");
+System.out.println("4. Division");
+System.out.println("5. Exit");
+System.out.print("Enter your choice: ");
+choice = scanner.nextInt();
+if (choice >= 1 && choice <= 4)
+{
+System.out.print("Enter first number: ");
+double num1 =
+scanner.nextDouble();
+System.out.print("Enter second number: ");
+double num2 = scanner.nextDouble();
+switch (choice)
+{
+case 1:
+System.out.println("Result: "+ (num1 + num2));
+break;
+case 2:
+System.out.println("Result: "+ (num1 - num2));
+break;
+case 3:
+System.out.println("Result: "+ (num1 * num2));
+break;
+case 4:
+if (num2 != 0)
+{
+System.out.println("Result:" + (num1 / num2));
+} 
+else 
+{ System.out.println("Error! Division by zero is not allowed.");
 }
 break;
-default:
-system.out.println("invalid operation.please choose 1 for addition,2 for subtraction,3 for Multiplication,or 4 for Division ");
+
+}
+} else if (choice != 5)
+{
+
+System.out.println("Invalid choice! Please choose again.");
 }
 }
-    
+while (choice != 5);
+
+scanner.close();
+}
 }
